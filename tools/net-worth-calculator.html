@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Net Worth Calculator — brian.invests</title>
+  <meta name="description" content="Free net worth calculator — add up your assets and debts to see exactly where you stand today." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/styles.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="../index.html">brian<span class="dot">.</span>invests</a>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+      <ul class="nav-links">
+        <li><a href="../index.html#pillars">What I cover</a></li>
+        <li><a href="../index.html#tools">Free tools</a></li>
+        <li><a href="../index.html#wealth-os">Wealth OS</a></li>
+        <li><a href="../index.html#join">Join the list</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main class="tool-page">
+    <div class="container">
+      <a class="back-link" href="../index.html#tools">← Back to free tools</a>
+      <span class="eyebrow">Free tool</span>
+      <h1>Net worth calculator</h1>
+      <p class="hero-lede">
+        Net worth is the one number that tells you where you actually stand — not your income, not
+        your salary. Add up what you own, subtract what you owe. Everything here stays in your
+        browser; nothing is saved or sent anywhere.
+      </p>
+
+      <div class="tool-layout">
+        <form id="nw-form" autocomplete="off">
+          <div class="fieldset-title">Assets — what you own</div>
+
+          <div class="field-group">
+            <label for="cash">Cash &amp; savings <span class="muted">USD</span></label>
+            <input type="number" id="cash" inputmode="decimal" min="0" step="any" placeholder="0" />
+            <p class="field-hint">Checking, savings, cash on hand</p>
+          </div>
+
+          <div class="field-group">
+            <label for="investments">Investments &amp; retirement <span class="muted">USD</span></label>
+            <input type="number" id="investments" inputmode="decimal" min="0" step="any" placeholder="0" />
+            <p class="field-hint">Brokerage, 401k/retirement accounts, crypto</p>
+          </div>
+
+          <div class="field-group">
+            <label for="property">Property value <span class="muted">USD</span></label>
+            <input type="number" id="property" inputmode="decimal" min="0" step="any" placeholder="0" />
+            <p class="field-hint">Current market value of home or other real estate</p>
+          </div>
+
+          <div class="field-group">
+            <label for="other-assets">Other assets <span class="muted">USD</span></label>
+            <input type="number" id="other-assets" inputmode="decimal" min="0" step="any" placeholder="0" />
+            <p class="field-hint">Vehicles, business equity, anything else of value</p>
+          </div>
+
+          <div class="fieldset-title">Liabilities — what you owe</div>
+
+          <div class="field-group">
+            <label for="mortgage">Mortgage balance <span class="muted">USD</span></label>
+            <input type="number" id="mortgage" inputmode="decimal" min="0" step="any" placeholder="0" />
+          </div>
+
+          <div class="field-group">
+            <label for="loans">Student / other loans <span class="muted">USD</span></label>
+            <input type="number" id="loans" inputmode="decimal" min="0" step="any" placeholder="0" />
+          </div>
+
+          <div class="field-group">
+            <label for="credit-card">Credit card debt <span class="muted">USD</span></label>
+            <input type="number" id="credit-card" inputmode="decimal" min="0" step="any" placeholder="0" />
+          </div>
+
+          <div class="field-group">
+            <label for="other-debt">Other debt <span class="muted">USD</span></label>
+            <input type="number" id="other-debt" inputmode="decimal" min="0" step="any" placeholder="0" />
+          </div>
+        </form>
+
+        <aside class="result-card" aria-live="polite">
+          <div class="label">Your net worth</div>
+          <div class="value" id="nw-result">$0</div>
+          <a class="btn btn-primary btn-block" href="../index.html#join">Save my results — join the list</a>
+
+          <div class="breakdown">
+            <div class="breakdown-row"><span>Total assets</span><strong id="nw-assets">$0</strong></div>
+            <div class="breakdown-row"><span>Total liabilities</span><strong id="nw-liabilities">$0</strong></div>
+          </div>
+
+          <div class="result-note" id="nw-note">
+            Fill in a few numbers to see where you stand.
+          </div>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <span class="muted">© <span id="year"></span> brian.invests</span>
+      <ul class="footer-links">
+        <li><a href="https://instagram.com/brian.invests" target="_blank" rel="noopener">Instagram</a></li>
+        <li><a href="../index.html#wealth-os">Wealth OS</a></li>
+        <li><a href="../index.html#join">Join the list</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+  <script src="../assets/js/main.js" defer></script>
+  <script src="../assets/js/net-worth-calculator.js" defer></script>
+</body>
+</html>
