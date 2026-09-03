@@ -13,10 +13,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Email capture form(s)
-  // TODO: wire this up to a real provider (ConvertKit / Beehiiv / Mailchimp / a Google Sheet via a
-  // service like Formspree). Right now it just confirms locally so the page is fully functional
-  // before you've picked a provider. Search "TODO: EMAIL PROVIDER" to find where to swap this in.
+  // Email capture form(s) — submissions go to Formspree.
+  const FORMSPREE_ENDPOINT = "https://formspree.io/f/mnpqvkwv";
+
   document.querySelectorAll("[data-capture-form]").forEach((form) => {
     form.addEventListener("submit", (e) => {
       e.preventDefault();
@@ -24,19 +23,27 @@ document.addEventListener("DOMContentLoaded", () => {
       const success = form.parentElement.querySelector(".form-success");
       if (!input || !input.value) return;
 
-      // TODO: EMAIL PROVIDER — replace this block with a real fetch() to your
-      // list provider's API or form endpoint, e.g.:
-      // fetch("https://api.convertkit.com/v3/forms/FORM_ID/subscribe", {
-      //   method: "POST",
-      //   headers: { "Content-Type": "application/json" },
-      //   body: JSON.stringify({ api_key: "YOUR_KEY", email: input.value }),
-      // });
-
-      if (success) {
-        success.textContent = "You're on the list — check your inbox to confirm.";
-        success.classList.add("show");
-      }
-      form.reset();
+      fetch(FORMSPREE_ENDPOINT, {
+        method: "POST",
+        headers: { Accept: "application/json" },
+        body: new FormData(form),
+      })
+        .then((res) => {
+          if (!success) return;
+          if (res.ok) {
+            success.textContent = "You're on the list — check your inbox to confirm.";
+            form.reset();
+          } else {
+            success.textContent = "Something went wrong — please try again.";
+          }
+          success.classList.add("show");
+        })
+        .catch(() => {
+          if (success) {
+            success.textContent = "Something went wrong — please try again.";
+            success.classList.add("show");
+          }
+        });
     });
   });
 });
