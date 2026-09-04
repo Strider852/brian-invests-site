@@ -13,8 +13,11 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Email capture form(s) — submissions go to Formspree.
+  // Formspree-backed forms (email capture, coaching inquiry, etc.) — any form with
+  // [data-capture-form] posts its fields as-is to the same endpoint. Customize the
+  // success text per-form via data-success-message; falls back to the join-list default.
   const FORMSPREE_ENDPOINT = "https://formspree.io/f/mnpqvkwv";
+  const DEFAULT_SUCCESS_MESSAGE = "You're on the list — check your inbox to confirm.";
 
   document.querySelectorAll("[data-capture-form]").forEach((form) => {
     form.addEventListener("submit", (e) => {
@@ -22,6 +25,8 @@ document.addEventListener("DOMContentLoaded", () => {
       const input = form.querySelector('input[type="email"]');
       const success = form.parentElement.querySelector(".form-success");
       if (!input || !input.value) return;
+
+      const successMessage = form.dataset.successMessage || DEFAULT_SUCCESS_MESSAGE;
 
       fetch(FORMSPREE_ENDPOINT, {
         method: "POST",
@@ -31,7 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
         .then((res) => {
           if (!success) return;
           if (res.ok) {
-            success.textContent = "You're on the list — check your inbox to confirm.";
+            success.textContent = successMessage;
             form.reset();
           } else {
             success.textContent = "Something went wrong — please try again.";

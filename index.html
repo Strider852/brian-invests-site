@@ -20,6 +20,7 @@
         <li><a href="index.html#pillars">What I cover</a></li>
         <li><a href="index.html#tools">Free tools</a></li>
         <li><a href="index.html#wealth-os">Wealth OS</a></li>
+        <li><a href="index.html#coaching">Coaching</a></li>
         <li><a href="index.html#join">Join the list</a></li>
       </ul>
     </div>
@@ -122,6 +123,12 @@
             <a class="btn btn-secondary btn-block" href="tools/net-worth-calculator.html">Open calculator →</a>
           </article>
           <article class="card">
+            <div class="icon">◈</div>
+            <h3>Resiliency score</h3>
+            <p class="muted">A 0-100 score for how ready you are for a job loss, a downturn, or a surprise expense.</p>
+            <a class="btn btn-secondary btn-block" href="tools/resiliency-score-calculator.html">Open calculator →</a>
+          </article>
+          <article class="card">
             <div class="icon">⏳</div>
             <h3>Retirement / FI calculator</h3>
             <p class="muted">Coming soon — how long until your money can support you.</p>
@@ -161,6 +168,39 @@
               </ul>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ COACHING / CONSULTING ============ -->
+    <section id="coaching">
+      <div class="container">
+        <div class="capture">
+          <span class="eyebrow">1:1 coaching</span>
+          <h2>Want a plan built around your actual numbers?</h2>
+          <p class="muted">
+            General frameworks only get you so far. If you want to talk through your budgeting, net
+            worth, or investing approach directly, tell me a bit about what you're looking for and
+            I'll follow up. Educational coaching only — not personalized investment advice.
+          </p>
+          <form class="inquiry-form" data-capture-form data-success-message="Got it — I'll follow up by email soon.">
+            <input type="hidden" name="_subject" value="New coaching inquiry — brian.invests" />
+            <input type="hidden" name="form_type" value="coaching_inquiry" />
+            <div class="field-group">
+              <label for="coaching-name">Name</label>
+              <input type="text" id="coaching-name" name="name" required />
+            </div>
+            <div class="field-group">
+              <label for="coaching-email">Email</label>
+              <input type="email" id="coaching-email" name="email" required aria-label="Email address" />
+            </div>
+            <div class="field-group">
+              <label for="coaching-message">What are you looking for help with?</label>
+              <textarea id="coaching-message" name="message" required></textarea>
+            </div>
+            <button class="btn btn-primary btn-block" type="submit">Send inquiry</button>
+          </form>
+          <div class="form-success"></div>
         </div>
       </div>
     </section>
