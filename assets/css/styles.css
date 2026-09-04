@@ -18,7 +18,7 @@
   --border: #e2dac9;
   --danger: #b3462c;
 
-  --font-display: "Fraunces", Georgia, "Times New Roman", serif;
+  --font-display: "Lora", Georgia, "Times New Roman", serif;
   --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 
   --radius-sm: 8px;
@@ -406,8 +406,19 @@ section { padding: 56px 0; }
   margin-bottom: 4px;
 }
 
+/* ---------- Coaching / consult panel ---------- */
+.consult {
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 40px;
+}
+.consult .section-head { margin-bottom: 28px; }
+.eyebrow-lg { font-size: 1.15rem; padding: 8px 18px; }
+
 /* ---------- Inquiry form (coaching) ---------- */
-.inquiry-form { max-width: 560px; margin: 22px auto 10px; text-align: left; display: grid; gap: 16px; }
+.inquiry-form { max-width: 560px; margin: 0 0 10px; text-align: left; display: grid; gap: 16px; }
+.consult .form-success { margin: 0; max-width: 560px; }
 
 .fieldset-title {
   font-size: 0.78rem;

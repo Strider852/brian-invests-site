@@ -52,7 +52,7 @@ add, remove, or rework one.
 All colors, fonts, and spacing tokens live at the top of
 `assets/css/styles.css` under `:root` (and a `prefers-color-scheme: dark`
 override below it). Change a value there and it updates everywhere. Fonts
-are loaded from Google Fonts (Fraunces for headings, Inter for body text) —
+are loaded from Google Fonts (Lora for headings, Inter for body text) —
 swap the `<link>` tags in each HTML file's `<head>` if you want different
 fonts.
 
