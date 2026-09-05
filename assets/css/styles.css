@@ -247,6 +247,16 @@ section { padding: 56px 0; }
 .section-head { max-width: 640px; margin: 0 auto 40px; text-align: center; }
 .section-head.left { margin-left: 0; text-align: left; }
 
+.section-foot { text-align: center; margin-top: 36px; }
+.section-foot-alt {
+  display: block;
+  margin-top: 14px;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  text-decoration: underline;
+}
+.section-foot-alt:hover { color: var(--primary-dark); }
+
 .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
 .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; }
 @media (max-width: 860px) {
