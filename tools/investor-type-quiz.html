@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Investor Type Quiz — brian.invests</title>
+  <meta name="description" content="Free investor/trader type quiz — find out whether you're wired to be a long-term investor, passive/index investor, swing trader, day trader, or options trader, based on your risk tolerance, knowledge, and time commitment." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/styles.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="../index.html">brian<span class="dot">.</span>invests</a>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+      <ul class="nav-links">
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../index.html#pillars">What I cover</a></li>
+        <li><a href="../index.html#tools">Free tools</a></li>
+        <li><a href="../index.html#wealth-os">Wealth OS</a></li>
+        <li><a href="../index.html#coaching">Coaching</a></li>
+        <li><a href="../index.html#community">Community</a></li>
+        <li><a href="../index.html#join">Join the list</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main class="tool-page">
+    <div class="container">
+      <a class="back-link" href="../index.html#tools">← Back to free tools</a>
+      <span class="eyebrow">Free tool</span>
+      <h1>Investor type quiz</h1>
+      <p class="hero-lede">
+        Long-term investor, passive/index investor, swing trader, day trader, or options trader —
+        which one actually fits how you think about risk, how much time you can give it, and what
+        you know? Answer 6 questions to find out. Educational only, not personalized financial
+        advice. Everything stays in your browser; nothing is saved or sent anywhere.
+      </p>
+
+      <div class="tool-layout">
+        <form id="it-form" autocomplete="off">
+          <div class="field-group">
+            <label for="it-drawdown">Your portfolio drops 20% in a week. What do you do?</label>
+            <select id="it-drawdown">
+              <option value="panic">Panic — I'd want to sell and get out</option>
+              <option value="hold">Uncomfortable, but I'd hold on</option>
+              <option value="calm">Stay calm — might even buy more</option>
+              <option value="opportunity">See it as an opportunity to use leverage or options</option>
+            </select>
+          </div>
+
+          <div class="field-group">
+            <label for="it-knowledge">How would you describe your market knowledge?</label>
+            <select id="it-knowledge">
+              <option value="beginner">Beginner — still learning the basics</option>
+              <option value="intermediate">Intermediate — comfortable with fundamentals, ETFs, diversification</option>
+              <option value="advanced">Advanced — I read charts and use technical analysis</option>
+              <option value="expert">Expert — I understand options mechanics (greeks, spreads, assignment)</option>
+            </select>
+          </div>
+
+          <div class="field-group">
+            <label for="it-time">How much time can you give to actively watching markets?</label>
+            <select id="it-time">
+              <option value="none">None — I check in monthly at most</option>
+              <option value="few">A few times a week</option>
+              <option value="daily">Daily, but not glued to the screen</option>
+              <option value="intraday">Multiple times a day / intraday</option>
+            </select>
+          </div>
+
+          <div class="field-group">
+            <label for="it-horizon">What's your typical investment time horizon?</label>
+            <select id="it-horizon">
+              <option value="decades">Decades — retirement-focused</option>
+              <option value="years">1 – 5 years</option>
+              <option value="weeks">Weeks to months</option>
+              <option value="days">A few days</option>
+              <option value="intraday">Intraday — in and out same day</option>
+            </select>
+          </div>
+
+          <div class="field-group">
+            <label for="it-goal">What's your primary goal?</label>
+            <select id="it-goal">
+              <option value="steady">Build long-term wealth steadily, buy and hold</option>
+              <option value="passive">Low-effort growth — set it and forget it</option>
+              <option value="active">Actively trade to beat the market through frequent decisions</option>
+              <option value="income-options">Generate steady income from options strategies like covered calls or selling puts</option>
+              <option value="speculative">Chase bigger, faster gains through leveraged or speculative trades</option>
+            </select>
+          </div>
+
+          <div class="field-group">
+            <label for="it-leverage">How comfortable are you with leverage or derivatives?</label>
+            <select id="it-leverage">
+              <option value="none">None — I don't use margin or derivatives</option>
+              <option value="curious">A little curious, haven't tried it</option>
+              <option value="comfortable">Comfortable — I've used options or margin before</option>
+              <option value="core">I actively use leverage/derivatives as a core strategy</option>
+            </select>
+          </div>
+        </form>
+
+        <aside class="result-card" aria-live="polite">
+          <div class="score-badge" id="it-runnerup">—</div>
+          <div class="label">Your investor type</div>
+          <div class="value" id="it-result" style="font-size:2rem;">—</div>
+          <p class="result-note" id="it-description" style="margin-top:14px;">
+            Answer the questions to see your type.
+          </p>
+
+          <div class="breakdown" id="it-breakdown"></div>
+
+          <div class="recommend">
+            <p class="recommend-label">Recommended next step</p>
+            <p class="recommend-text" id="it-recommend-text"></p>
+            <a class="btn btn-primary btn-block" id="it-recommend-cta" href="#">Recommendation</a>
+            <a class="recommend-alt" id="it-recommend-alt" href="#">Alternative</a>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <span class="muted">© <span id="year"></span> brian.invests</span>
+      <ul class="footer-links">
+        <li><a href="https://instagram.com/brian.invests" target="_blank" rel="noopener">Instagram</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../index.html#wealth-os">Wealth OS</a></li>
+        <li><a href="../index.html#community">Community</a></li>
+        <li><a href="../index.html#join">Join the list</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+  <script src="../assets/js/main.js" defer></script>
+  <script src="../assets/js/investor-type-quiz.js" defer></script>
+</body>
+</html>

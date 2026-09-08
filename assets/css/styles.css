@@ -241,6 +241,8 @@ a { color: var(--primary-dark); }
   border-radius: 50%;
   background: var(--accent);
 }
+.playbook-item { display: flex; flex-direction: column; gap: 2px; }
+.playbook-item span { color: var(--text-muted); }
 
 /* ---------- Sections ---------- */
 section { padding: 56px 0; }
